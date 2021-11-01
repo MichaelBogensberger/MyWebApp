@@ -1,6 +1,9 @@
 package com.example.mywebapp.user;
 
+import com.example.mywebapp.phone.Phone;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name= "users")
@@ -26,6 +29,8 @@ public class User {
     private boolean enabled;
 
 
+    @OneToMany(mappedBy="owner")
+    private List<Phone> phones;
 
 
     // to String Methode
@@ -90,6 +95,16 @@ public class User {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+
+    public List<Phone> getPhones() {
+        return phones;
+    }
+
+    public void setPhones(List<Phone> phones) {
+        this.phones = phones;
+    }
+
 
 
 

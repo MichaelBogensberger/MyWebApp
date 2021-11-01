@@ -41,9 +41,10 @@
                     <th scope="col">Last</th>
                     <th scope="col">Email</th>
                     <th scope="col">Passwort</th>
-                    <th scope="col">enabled</th>
-                    <th scope="col">edit</th>
-                    <th scope="col">delete</th>
+                    <th scope="col">Enabled</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Details</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -67,12 +68,19 @@
                         <td>
                             [[${user.enabled}]]
                         </td>
+
                         <td>
                             <a th:href="@{'/users/edit/' + ${user.id} }">edit</a>
                         </td>
                         <td>
                             <a th:href="@{'/users/delete/' + ${user.id} }" >delete</a>
                         </td>
+
+                        <td>
+                            <a th:href="@{'/users/details/' + ${user.id} }" >details</a>
+                        </td>
+
+
                     </tr>
                 </th:block>
                 </tbody>
