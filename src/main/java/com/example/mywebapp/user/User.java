@@ -22,6 +22,10 @@ public class User {
     @Column(length = 45, nullable = false)
     private String lastname;
 
+    @Column()
+    private boolean enabled;
+
+
 
 
     // to String Methode
@@ -33,6 +37,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
+                ", enabled='" + enabled + '\'' +
                 '}';
     }
 
@@ -77,6 +82,15 @@ public class User {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
+    public boolean getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
 
 
 }

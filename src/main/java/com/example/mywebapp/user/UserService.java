@@ -16,6 +16,17 @@ public class UserService {
     }
 
 
+    public void save(User user) {
+        repo.save(user);
+    }
 
+    public User getById(Integer id) {
+        return repo.findById(id).get();
+    }
+
+
+    public void deleteById(Integer id) {
+        repo.deleteById(id);
+    }
 
 }

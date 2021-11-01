@@ -1,0 +1,30 @@
+body {
+background-color: #1E222A;
+}
+
+h1 {
+color:#E06C75;
+
+}
+
+
+.usersList {
+margin-top:30px;
+font-weight: 500;
+
+}
+
+a {
+  color: #61AFEF;
+ text-decoration: none !important;
+}
+
+.addUser {
+
+text-decoration: none !important;
+
+}
+
+.myApp {
+margin-top: 30px;
+}
