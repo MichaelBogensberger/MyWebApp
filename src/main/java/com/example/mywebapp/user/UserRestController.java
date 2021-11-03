@@ -63,17 +63,6 @@ public class UserRestController {
 
 
 
-    // Telefonnummer hinzufügen
-    @RequestMapping(method = RequestMethod.POST, value= "/api/addPhone")
-    public String addPhone(@RequestParam String email, String pw, Long number, String Anbieter ) {
-
-        return "Telefonnummer hinzugefügt";
-
-    }
-
-
-
-
 
 
 
