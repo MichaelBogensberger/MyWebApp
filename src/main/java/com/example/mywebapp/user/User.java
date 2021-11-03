@@ -1,6 +1,7 @@
 package com.example.mywebapp.user;
 
 import com.example.mywebapp.phone.Phone;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
@@ -28,7 +29,7 @@ public class User {
     @Column()
     private boolean enabled;
 
-
+    @JsonIgnore
     @OneToMany(mappedBy="owner")
     private List<Phone> phones;
 

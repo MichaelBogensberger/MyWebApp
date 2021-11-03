@@ -29,4 +29,26 @@ public class UserService {
         repo.deleteById(id);
     }
 
+
+
+
+    // Methoden für den RestController
+    public User apiUpdateUser(Integer id, User givenUser) {
+        User foundUser = repo.findById(id).get();
+
+        foundUser.setFirstname(givenUser.getFirstname());
+        foundUser.setLastname(givenUser.getLastname());
+        foundUser.setPassword(givenUser.getPassword());
+        foundUser.setEmail(givenUser.getEmail());
+        foundUser.setEnabled(givenUser.getEnabled());
+
+        return repo.save(foundUser);
+    }
+
+    public void apiDeleteUser(Integer id) {
+        repo.deleteById(id);
+    }
+
+
+
 }
