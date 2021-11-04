@@ -28,22 +28,8 @@ public class UserRestController {
     @RequestMapping(method = RequestMethod.POST, value= "/api/createUser")
     public String createUser(@RequestParam String first, String last, String email, String pw, boolean enabled) {
 
-        User user = new User();
-        user.setFirstname(first);
-        user.setLastname(last);
-        user.setEmail(email);
-        user.setEnabled(enabled);
-        user.setPassword(pw);
+            return service.apiCreateUser(first, last, email, pw, enabled);
 
-        service.save(user);
-
-        return "User{" +
-                ", email='" + email + '\'' +
-                ", password='" + pw + '\'' +
-                ", firstname='" + first + '\'' +
-                ", lastname='" + last + '\'' +
-                ", enabled='" + enabled + '\'' +
-                "} wurde angelegt";
     }
 
 

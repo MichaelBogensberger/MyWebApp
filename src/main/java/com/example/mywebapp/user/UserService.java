@@ -33,6 +33,29 @@ public class UserService {
 
 
     // Methoden für den RestController
+
+
+    public String apiCreateUser(String first, String last, String email, String pw, boolean enabled) {
+
+        User user = new User();
+        user.setFirstname(first);
+        user.setLastname(last);
+        user.setEmail(email);
+        user.setEnabled(enabled);
+        user.setPassword(pw);
+
+        repo.save(user);
+
+        return "User{" +
+                ", email='" + email + '\'' +
+                ", password='" + pw + '\'' +
+                ", firstname='" + first + '\'' +
+                ", lastname='" + last + '\'' +
+                ", enabled='" + enabled + '\'' +
+                "} wurde angelegt";
+    }
+
+
     public User apiUpdateUser(Integer id, User givenUser) {
         User foundUser = repo.findById(id).get();
 
