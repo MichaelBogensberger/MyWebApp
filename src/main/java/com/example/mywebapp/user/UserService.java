@@ -73,5 +73,10 @@ public class UserService {
     }
 
 
+    public String apiCreateUserFromObject(User user) {
+        repo.save(user);
+        return "User angelegt";
+    }
+
 
 }

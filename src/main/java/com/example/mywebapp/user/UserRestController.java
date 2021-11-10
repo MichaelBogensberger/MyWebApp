@@ -24,12 +24,21 @@ public class UserRestController {
         return service.listAll();
     }
 
+
     // neuen User anlegen
-    @RequestMapping(method = RequestMethod.POST, value= "/api/createUser")
-    public String createUser(@RequestParam String first, String last, String email, String pw, boolean enabled) {
+    @PostMapping(value= "/api/createUser")
+    public String createUser(@RequestHeader String first,@RequestHeader String last,@RequestHeader String email,@RequestHeader String pw,@RequestHeader boolean enabled) {
 
             return service.apiCreateUser(first, last, email, pw, enabled);
 
+    }
+
+
+    // neuen User mit dem Object User anlegen
+    @PostMapping(value= "/api/createUserFromObject")
+    public String createUserFromObject(@RequestBody User user) {
+
+        return service.apiCreateUserFromObject(user);
     }
 
 

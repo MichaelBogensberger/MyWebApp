@@ -28,10 +28,10 @@ public class userRepositoryTest {
     @Test
     public void testAddNew() {
         User user = new User();
-        user.setEmail("agen12@gmail.com");
+        user.setEmail("agen1233@gmail.com");
         user.setPassword("1233");
-        user.setFirstname("niklas");
-        user.setLastname("homus");
+        user.setFirstname("nikklas");
+        user.setLastname("homusss");
 
         User savedUser = userRepo.save(user);
 
@@ -42,7 +42,7 @@ public class userRepositoryTest {
 
     @Test
     public void testDeleteUser() {
-        User user = userRepo.findById(2).get();
+        User user = userRepo.findById(3).get();
 
 
        System.out.println("Erster Name:" + user.getFirstname());
@@ -72,7 +72,7 @@ public class userRepositoryTest {
 
         phone.setNumber(13435496L);
         phone.setAnbieter("A1");
-        phone.setOwner(userRepo.findById(24).get());
+        phone.setOwner(userRepo.findById(6).get());
 
         phoneRepository.save(phone);
 

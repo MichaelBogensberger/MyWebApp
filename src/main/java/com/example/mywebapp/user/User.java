@@ -4,6 +4,8 @@ import com.example.mywebapp.phone.Phone;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -14,6 +16,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotBlank(message = "Please add Email Address")
     @Column(nullable = false, unique = true, length = 45)
     private String email;
 
