@@ -1,5 +1,7 @@
 package com.example.mywebapp.user;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,13 +10,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
+
 @RestController
 public class UserRestController {
 
     @Autowired
     private UserService service;
 
-
+    private final Logger LOGGER = LoggerFactory.getLogger(UserRestController.class);
 
     // HTTP REQUESTS
 
@@ -56,6 +59,13 @@ public class UserRestController {
         return "User deleted";
     }
 
+
+    // findByEmail
+    @PostMapping(value ="/api/findByEmail")
+    public User apiFindByEmail(@RequestHeader String email) {
+        LOGGER.info("User found by Email -------------------------------------------------------------------");
+        return service.findByEmail(email);
+    }
 
 
 
