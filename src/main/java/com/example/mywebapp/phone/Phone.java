@@ -27,7 +27,7 @@ public class Phone {
 
 
 
-
+    // Getter und Setter
     public Integer getId() {
         return id;
     }
